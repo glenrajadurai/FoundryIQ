@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 220 20% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 12%;
+    --primary: 215 85% 35%;
+    --primary-foreground: 210 40% 98%;
+    --border: 220 13% 91%;
+  }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f8fafc;
+    color: #0f172a;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Foundry High-Contrast & Accessibility Mode */
+.foundry-high-contrast {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 5%;
+}
+
+.foundry-high-contrast body,
+.foundry-high-contrast {
+  background-color: #f1f5f9 !important;
+  color: #020617 !important;
+}
+
+.foundry-high-contrast .bg-white {
+  background-color: #ffffff !important;
+  border-color: #334155 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) !important;
+}
+
+.foundry-high-contrast .border-slate-200,
+.foundry-high-contrast .border-slate-100 {
+  border-color: #475569 !important;
+}
+
+.foundry-high-contrast text,
+.foundry-high-contrast .recharts-cartesian-axis-tick-value {
+  fill: #020617 !important;
+  font-weight: 700 !important;
+}
+
+.foundry-high-contrast .recharts-cartesian-grid line {
+  stroke: #94a3b8 !important;
+  stroke-width: 1.2px !important;
+}
+
+/* Custom scrollbars for industrial density data tables */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #e2e8f0;
+}
+::-webkit-scrollbar-thumb {
+  background: #64748b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Printing styles for IATF reports */
+@media print {
+  aside, nav, .no-print {
+    display: none !important;
+  }
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
